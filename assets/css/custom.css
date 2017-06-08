@@ -44,6 +44,7 @@ body{
 
 .button.inverse:hover{
 	color: #fff;
+	text-decoration: none;	
 }
 
 .wrapper-content{
@@ -80,13 +81,14 @@ body{
 	padding-bottom: 10px;
 }
 
-.side-menu ul li a{
+.side-menu ul li a, .side-menu .h4 a {
 	font-size: 14pt;
 	text-transform: uppercase;	
+	color: #fff;
 	text-decoration: none;
 }
 
-.side-menu ul li a:hover{
+.side-menu ul li a:hover, .side-menu .h4 a:hover {
 	text-decoration: underline;	
 }
 
