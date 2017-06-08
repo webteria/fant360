@@ -46,6 +46,10 @@
 
 	<div class="header-fantastico" style="height:110px; overflow:hidden;"></div>
 
+	<div id="banner_slb_topo" class="tag-manager-publicidade-container"></div>
+	 
+	<div id="banner_mobile_topo" class="tag-manager-publicidade-container"></div>	
+	
 	<div class="video-fullscreen hidden-xs">
 
 		<div class="header-video-fullscreen pt-20">
@@ -354,5 +358,42 @@
 	<script type="text/javascript" src="assets/js/blockui.min.js"></script>
 	<script type="text/javascript" src="assets/js/custom.js"></script>
 
+	<!-- TEALIUM -->
+	<script type="text/javascript">
+	window.tagManager = {
+		"structureTree":'["g1","fantástico"]',
+		"sitePage":'',
+		"pageName":'Internas',
+		"extras": {
+			"entidade":'CGJ - Fantastico',
+			"classe":'Externa'
+		}
+	};
+	</script>
+
+	<script type="text/javascript">
+	var utag_data = {
+		"structure_tree": window.tagManager.structureTree,
+		"ad_site_page": window.tagManager.sitePage,
+		"page_name": window.tagManager.pageName,
+		"extras": window.tagManager.extras
+	};
+	</script>
+
+	<script type="text/javascript">
+	(function (a, b, c, d) {
+		a = 'http://tags.globo.com/utag/globo/g1/prod/utag.js';
+		b = document;
+		c = 'script';
+		d = b.createElement(c);
+		d.src = a;
+		d.type = 'text/java' + c;
+		d.async = true;
+		a = b.getElementsByTagName(c)[0];
+		a.parentNode.insertBefore(d, a);
+	})();
+	</script>
+	<!-- TEALIUM -->	
+	
 </body>
 </html>
