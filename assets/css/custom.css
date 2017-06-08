@@ -109,8 +109,17 @@ body{
 }
 
 header{
-	margin-top: 30px;
-	height: 100px;
+	/*margin-top: 30px;*/
+	height: 180px;
+}
+
+#header-produto.header-editoria .menu-subeditoria h2, 
+#header-produto.header-editoria .menu-subeditoria span{
+	margin-top: 0;
+}
+
+#busca-padrao{
+	display: none !important;
 }
 
 .content .intro .logo img{
