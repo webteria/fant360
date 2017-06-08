@@ -245,6 +245,7 @@ header{
 .video-details.open{
 	right: 0;
 	display: block;	
+	overflow: hidden;
 }
 
 .video-details h2{

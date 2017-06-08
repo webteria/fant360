@@ -34,6 +34,12 @@ $(document).ready(function(){
 	});
 	*/
 
+	$('body').on('click', '.scrollTop', function(){		
+		var body = $("html, body");
+		body.stop().animate({scrollTop: $('body').offset().top}, 500);	
+		$('.side-menu').removeClass('active');	
+	});
+
 	$.get('globocom-bar.html', function(data){
 		$('.header-fantastico').html(data);
 	});	
@@ -115,13 +121,13 @@ $(document).ready(function(){
 
 					if(serie_id == video_share[0] && video_key == video_share[1]){
 						
-						$(this).click();					
+						$(this).click();
 						
 					}
 
 				});
 
-			}
+			}			
 
 		}, 1000);			
 
