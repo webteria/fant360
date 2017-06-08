@@ -82,24 +82,30 @@ $(document).ready(function(){
 			
 		});	
 
-		var query_string = getUrlVars();
+		setTimeout(function(){
 
-		if(query_string.s && query_string.video){
-			
-			$('.open-video-fullscreen').each(function(){
+			var query_string = getUrlVars();		
 
-				var serie_id = $(this).data('serie-id');
-				var video_key = $(this).data('key');				
+			if(query_string.s){			
 
-				if(serie_id == query_string.s && video_key == query_string.video){
+				var video_share = query_string.s.split('_video_key_');
+				
+				$('.open-video-fullscreen').each(function(){
 
-					$(this).click();
+					var serie_id = $(this).data('serie-id');
+					var video_key = $(this).data('key');						
 
-				}
+					if(serie_id == video_share[0] && video_key == video_share[1]){
+						
+						$(this).click();					
+						
+					}
 
-			});
+				});
 
-		}				
+			}
+
+		}, 1000);			
 
 	});	
 
@@ -144,13 +150,13 @@ $(document).ready(function(){
 		var serie_id = $(this).data('serie-id');
 		var video_key = $(this).data('key');
 
-		var facebook_link = $('.video-fullscreen .fa-facebook').attr('href');
-		$('.video-fullscreen .fa-facebook').attr('href', facebook_link+'?s='+serie_id+'&video_key='+video_key);
-		$('.video-details .fa-facebook').attr('href', facebook_link+'?s='+serie_id+'&video_key='+video_key);
+		var facebook_link = $('.video-fullscreen .fa-facebook').data('href');
+		$('.video-fullscreen .fa-facebook').attr('href', facebook_link+'?s='+serie_id+'_video_key_'+video_key);
+		$('.video-details .fa-facebook').attr('href', facebook_link+'?s='+serie_id+'_video_key_'+video_key);
 
-		var twitter_link = $('.video-fullscreen .fa-twitter').attr('href');
-		$('.video-fullscreen .fa-twitter').attr('href', twitter_link+'?s='+serie_id+'&video_key='+video_key);
-		$('.video-details .fa-twitter').attr('href', twitter_link+'?s='+serie_id+'&video_key='+video_key);		
+		var twitter_link = $('.video-fullscreen .fa-twitter').data('href');
+		$('.video-fullscreen .fa-twitter').attr('href', twitter_link+'?s='+serie_id+'_video_key_'+video_key);
+		$('.video-details .fa-twitter').attr('href', twitter_link+'?s='+serie_id+'_video_key_'+video_key);		
 
 		var clear_cache = new Date().getTime();
 		
@@ -208,7 +214,7 @@ $(document).ready(function(){
 						adaptiveHeight: true
 					});	
 
-					$('.video-details .more-videos').slick('reinit');							
+					// $('.video-details .more-videos').slick('reinit');							
 
 				}			
 				
