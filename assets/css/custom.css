@@ -4,7 +4,7 @@ body{
 	font-family: 'Open Sans', sans-serif !important;
 	height: 100%;
 	/*background-image: url(../imgs/bg.jpg);*/
-	background-size: 100% !important;;
+	background-size: 100% !important;
 	background-repeat: no-repeat !important;;
 	background-position: top !important;
 }
@@ -52,6 +52,7 @@ body{
 }
 
 .side-menu{
+	top: 174px;
 	margin-top: -20px;	
 	position: fixed;
 	padding: 2% 0 0 5%;

@@ -1,6 +1,24 @@
 
 $(document).ready(function(){
 
+	function fixSideMenu() {
+		var $cache = $('.side-menu');
+		if ($(window).scrollTop() > 140)
+		  $cache.css({
+		    'position': 'fixed',
+		    'top': '10px'
+		  });
+		else
+		  $cache.css({
+		    'position': 'fixed',
+		    'top': '174'
+		  });
+	}
+	$(window).scroll(fixSideMenu);
+	fixSideMenu();
+
+	// $('.side-menu').scrollTop
+
 	$.loadScript = function (url, callback) {
 		$.ajax({
 			url: url,
@@ -111,6 +129,7 @@ $(document).ready(function(){
 
 	$('body').on('click', '.open-side-menu', function(){
 		$('.side-menu').addClass('active');
+		fixSideMenu();
 	});
 
 	$('body').on('click', '.close-side-menu', function(){
