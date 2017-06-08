@@ -1,0 +1,62 @@
+﻿<krpano>
+
+	<action name="startup" autorun="onstart">
+		
+		if(device.panovideosupport == false,
+			error('Sorry, but panoramic videos are not supported by your current browser!');
+		  ,
+			loadscene(videopano);
+		  );
+	</action>
+	<!-- inclui título para o vídeo sobre a barra de play -->
+	<scene name="videopano" title="">
+
+		<!-- include the videoplayer interface / skin (with VR support) -->
+		<include url="skin/videointerface.xml" />
+
+		<!-- include the videoplayer plugin -->
+		<plugin name="video"
+		        url.html5="%SWFPATH%/plugins/videoplayer.js"
+		        url.flash="%SWFPATH%/plugins/videoplayer.swf"
+		        pausedonstart="false"
+		        loop="false"
+		        volume="1.0"
+		        onloaded="add_video_sources();"
+		        />
+
+		<!-- use the videoplayer plugin as panoramic image source -->
+		<image>
+			<sphere url="plugin:video" />
+		</image>
+
+		<!-- set the default view -->
+		<view hlookat="0" vlookat="0" fovtype="DFOV" fov="130" fovmin="75" fovmax="150" distortion="0.0" />
+
+		
+		<!-- add the video sources and play the video -->
+
+		<!-- videointerface_addsource('resolução', 'path para o arquivo de vídeo|path para o arquivo webm -opcional - |path para o thumbnail do vídeo') 
+
+		OBS: extensões dos arquivos SEMPRE em letra minúscula -->
+
+		<action name="add_video_sources">
+			videointerface_addsource('Baixa', '%CURRENTXML%/video-1024x512.mp4|%CURRENTXML%/video-1024x512.webm|%CURRENTXML%/iphone-audio.m4a', '%CURRENTXML%/video-1024x512-poster.jpg');
+
+			videointerface_addsource('Média', '%CURRENTXML%/video-1024x512.mp4|%CURRENTXML%/video-1024x512.webm|%CURRENTXML%/iphone-audio.m4a', '%CURRENTXML%/video-1024x512-poster.jpg');
+
+			videointerface_addsource('Alta', '%CURRENTXML%/video-1024x512.mp4|%CURRENTXML%/video-1024x512.webm|%CURRENTXML%/iphone-audio.m4a', '%CURRENTXML%/video-1024x512-poster.jpg');
+
+
+			if(device.mobile,
+				<!-- iOS Safari has a very slow 'video-to-webgl-texture' transfer, therefore use a low-res video by default -->
+				videointerface_play('Baixa');
+			  ,
+			  	videointerface_play('Alta');
+			  
+				videointerface_play('Média');
+			  );
+		</action>
+
+	</scene>
+
+</krpano>

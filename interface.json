@@ -1,0 +1,6 @@
+{
+	"background": "assets/imgs/bg.jpg",	
+	"intro_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in accumsan ipsum nulla at imperdiet scelerisque cras consectetur. Nunc porta at mauris ac posuere. Duis dictum luctus facilisis. Proin venenatis diam mauris.",
+	"intro_thumb": "assets/imgs/cover-video-intro.jpg",
+	"intro_video": "https://s3.glbimg.com/v1/AUTH_09e36e26d8e744cb8a151773b597200e/fantastico_videos_360/Player360/player360/krpano.html?xml=midias/videopano01.xml"
+}
