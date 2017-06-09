@@ -121,7 +121,7 @@ $(document).ready(function(){
 
 					if(serie_id == video_share[0] && video_key == video_share[1]){
 						
-						$(this).click();
+						$(this).click();					
 						
 					}
 
@@ -129,7 +129,7 @@ $(document).ready(function(){
 
 			}			
 
-		}, 1000);			
+		}, 2000);			
 
 	});	
 
@@ -148,8 +148,10 @@ $(document).ready(function(){
 			var wrapper = $('.video-mobile-open');
 			$('.wrapper-content').addClass('video-mobile-is-open');
 			$('html, body').scrollTop($('body').offset().top);
+			wrapper.find('.about-and-share').hide();			
 		}else{
 			var wrapper = $('.video-fullscreen');
+			wrapper.find('.about-and-share').show();
 		}
 
 		wrapper.addClass('active');
@@ -197,10 +199,12 @@ $(document).ready(function(){
 
 						$('.wrapper-content').addClass('video-mobile-is-open');
 						$('html, body').scrollTop($('body').offset().top);
+						wrapper.find('.about-and-share').show();
 
 					}else{
 
 						var wrapper = $('.video-fullscreen');
+						wrapper.find('.about-and-share').show();
 
 					}
 
